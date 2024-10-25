@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Binance Market Data WebSocket App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based application that connects to the Binance WebSocket and REST API to display real-time market data for selected cryptocurrencies (ETH/USDT, BNB/USDT, DOT/USDT). It includes features for toggling between different coins, selecting candlestick timeframes, and preserving previous chart data for each coin using local storage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Real-Time Market Data: Uses Binance’s WebSocket to fetch real-time candlestick data for selected cryptocurrencies.
+- Candlestick Chart Visualization: Displays live candlestick data in a chart with options for different time intervals (1m, 3m, 5m).
+- Coin Toggle: Allows users to toggle between ETH/USDT, BNB/USDT, and DOT/USDT, maintaining each coin’s previous chart data.
+- Data Persistence: Stores previous data in local storage to preserve historical chart data for each selected coin.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `React`: JavaScript library for building the user interface.
+- `Binance API:` REST and WebSocket APIs for fetching market data.
+- `Chart.js: `Library for displaying candlestick charts.
+- `Local Storage:` For data persistence, storing previous candlestick data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup and Installation
 
-### `npm test`
+Clone the repository:
+```bash
+git clone <repository-url>
+cd <repository-directory>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+## Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+## Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
+- `App.js:` The main component handling state and WebSocket connections.
+- `CryptoChart.js:` A component displaying candlestick charts with Chart.js.
+- `App.css:` Basic styling for the application.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
+- `Select a cryptocurrency:` Choose between ETH/USDT, BNB/USDT, or DOT/USDT from the dropdown to view the respective candlestick chart.4
+- `Change time intervals:` Select between 1-minute, 3-minute, or 5-minute intervals to adjust the chart timeframe.
+- `Live Updates:` The chart updates in real-time as new WebSocket data is received from Binance.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Explanation
+- `WebSocket Connection:` In App.js, the application connects to the Binance WebSocket API to receive real-time candlestick data for the selected coin and timeframe.
 
-### Code Splitting
+- `Historical Data:` Uses Binance REST API to fetch historical data and populate the chart initially.
+- `Data Persistence:` Stores and retrieves data from local storage to maintain chart data for each coin upon switching.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Screenshot
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Home Page](./Scrrenshot/image.png)
